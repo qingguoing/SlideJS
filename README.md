@@ -14,3 +14,5 @@
   - controllerNext {string} 向右控制的类
 
 简单使用方式参见文件中的index.html
+
+js代码比较简单，原理就不在赘述

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>slideJS test</title>
+    <script src="slide.js"></script>
+    <style>
+    #slide {
+        margin: 10px auto;
+        height: 264px;
+        width: 960px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    #slide ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    #slide ul li {
+        float: left;
+        width: 960px;
+        height: 264px;
+    }
+    
+    // slide-dot
+    // slide-active
+    </style>
+</head>
+
+<body>
+    <div id="slide">
+        <ul>
+            <li><img src="1.jpg"></li>
+            <li><img src="2.jpg"></li>
+        </ul>
+    </div>
+    <script>
+    Animation.slide({
+        target: 'slide-news',
+        showMarker: true,
+        marker: true,
+        setClass: {
+            marker: 'slide-dot',
+            active: 'slide-active',
+            unactive: ''
+        }
+    });
+    </script>
+</body>
+</html>

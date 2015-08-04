@@ -1,54 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>slideJS test</title>
-    <script src="slide.js"></script>
-    <style>
-    #slide {
-        margin: 10px auto;
-        height: 264px;
-        width: 960px;
-        overflow: hidden;
-        position: relative;
-    }
-    
-    #slide ul {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    
-    #slide ul li {
-        float: left;
-        width: 960px;
-        height: 264px;
-    }
-    
-    // slide-dot
-    // slide-active
-    </style>
-</head>
+    <link rel="stylesheet" href="slide.css">
 
-<body>
-    <div id="slide">
-        <ul>
-            <li><img src="1.jpg"></li>
-            <li><img src="2.jpg"></li>
-        </ul>
+  </head>
+
+  <body>
+    <div id="slide" class="slide">
+      <ul class="slide_list">
+        <li><img src="http://placehold.it/960x264/5ec5ce/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/75aee6/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/5ec5ce/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/75aee6/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/5ec5ce/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/75aee6/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/5ec5ce/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/75aee6/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/5ec5ce/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/75aee6/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/5ec5ce/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/75aee6/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/5ec5ce/ffffff"></li>
+        <li><img src="http://placehold.it/960x264/75aee6/ffffff"></li>
+      </ul>
     </div>
+
+    <script src="slide.js"></script>
     <script>
-    Animation.slide({
-        target: 'slide-news',
+      Animation.slide({
+        target: 'slide',
         showMarker: true,
         marker: true,
+        showController: true,
         setClass: {
-            marker: 'slide-dot',
-            active: 'slide-active',
-            unactive: ''
+          marker: 'slide-dot',
+          active: 'slide-active',
+          unactive: '',
+          controllerPrev: 'slide-control-prev',
+          controllerNext: 'slide-control-next'
         }
-    });
+      });
     </script>
-</body>
+  </body>
 </html>

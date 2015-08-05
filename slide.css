@@ -1,0 +1,90 @@
+.slide {
+  position: relative;
+  /* height: 264px;*/
+  height: 300px;
+  /* width: 960px; */
+  width: 100%;
+  max-width: 1024px;
+  margin: 2em auto;
+  padding: 0 2em 4em;
+  border-radius: 1em;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.slide_list {
+  margin: 0 0 0 2em;
+  padding: 0;
+  position: absolute;
+  top:0;right:0;left:0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.slide_list li {
+  float: left;
+  width: 960px;
+  height: 264px;
+}
+
+.slide-dot {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right:0;bottom:0;left:2em;
+  /* outline: 1px dotted red; */
+  list-style: none;
+  text-align: center;
+}
+
+.slide-dot li {
+  float: left;
+  padding: .25em 1.125em .35em;
+  margin: 0;
+  cursor: pointer;
+  color: hsl(190, 50%, 30%);
+  background-color: hsl(190, 50%, 94%);
+  border: 1px solid hsl(190, 50%, 84%);
+}
+
+.slide-dot .slide-active {
+  background-color: hsl(190, 50%, 64%);
+  color: #fff;
+}
+
+[class*="slide-control-"] {
+  position: absolute;
+  top:0;bottom:0;
+  width: 2em;
+  background-color: #444;
+  z-index: 2;
+}
+
+.slide-control-prev {
+  left: 0;
+  background: #444 url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpolygon fill='hsl(185, 53%, 94%)' points='6,12 6,0 0,6'/%3E%3C/svg%3E") .65em 45% no-repeat;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+.slide-control-next {
+  right: 0;
+  background: #444 url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpolygon fill='hsl(185, 53%, 94%)' points='0,12 0,0 6,6'/%3E%3C/svg%3E") .7em 45% no-repeat;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+/* general styles */
+* {
+  box-sizing: inherit;
+  /* outline: 1px dotted gray; */
+}
+
+body {
+  font: 100%/1.5 sans-serif;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}

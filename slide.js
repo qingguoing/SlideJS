@@ -2,13 +2,13 @@ var Animation = (function() {
     var Slide = function(config) {
         this.config = typeof config === 'object' ? config : {};
         this.targetElement = this.config.target || 'slide';
-        // 滚动标记
+        // show slide marker
         this.showMarker = this.config.showMarker || false;
         this.mark = this.config.marker || false;
         this.marker = this.config.setClass && this.config.setClass.marker || '';
         this.active = this.config.setClass && this.config.setClass.active || '';
         this.unactive = this.config.setClass && this.config.setClass.unactive || '';
-        // 左右控制
+        // show left and right controller
         this.showController = this.config.showController || false;
         this.controllerPrev = this.config.setClass && this.config.setClass.controllerPrev || '';
         this.controllerNext = this.config.setClass && this.config.setClass.controllerNext || '';
@@ -39,8 +39,7 @@ var Animation = (function() {
                     oOlis = [];
 
                 oOl.className = this.marker;
-                
-                // i从1开始，绑定标识数字
+               	
                 for (var i = 1; i <= this.number; i++) {
 	                this.mark ? oOlis.push('<li class="' + this.unactive + '">' + i + '<\/li>') : oOlis.push('<li class="' + this.unactive + '">' + "" + "<\/li>");
 	            }
@@ -71,7 +70,7 @@ var Animation = (function() {
         		that.next();
         	}, this.aboutTime);
         	
-        	// 初始化事件绑定函数
+        	// initialize the addEvent function
         	this.addEvent();
         	
         	this.addEvent(this.oTarget, 'mouseover', function() {

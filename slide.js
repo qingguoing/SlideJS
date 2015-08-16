@@ -31,7 +31,8 @@ var Animation = (function() {
         	var oULi = this.oUl.getElementsByTagName('li');
             this.width = oULi[0].offsetWidth;
             this.number = oULi.length;
-            this.oUl.style.width = this.number * this.width + 'px';            
+            this.oUl.style.width = this.number * this.width + 'px';
+            this.start = this.oUl.offsetLeft;
             
             // marker
             if (this.showMarker) {
@@ -50,8 +51,7 @@ var Animation = (function() {
 		        this.oOli = oOl.getElementsByTagName('li');
 		        this.oOli[0].className = this.active;
             }
-            
-            console.log(this.showController);
+        
             // controller
             if(this.showController) {
             	this.oPrev = document.createElement('span');
@@ -140,11 +140,11 @@ var Animation = (function() {
         	}, this.miliTime);
         },
         
-        move: function(left) {
-        	this.oUl.style.left = this.speed + 'px',
-        	leftOffset = this.oUl.offsetLeft;
+        move: function(left, start) {
+        	this.oUl.style.left = this.speed + 'px';
+        	leftOffset = this.oUl.offsetLeft - this.start;
         	this.speed += (left - leftOffset) / 3;
-        	
+            
         	if (Math.abs(left - leftOffset) === 0) {
         		this.oUl.style.left = left + 'px';
         		clearInterval(this.timer);

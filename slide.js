@@ -140,7 +140,7 @@ var Animation = (function() {
         	}, this.miliTime);
         },
         
-        move: function(left, start) {
+        move: function(left) {
         	this.oUl.style.left = this.speed + 'px';
         	leftOffset = this.oUl.offsetLeft - this.start;
         	this.speed += (left - leftOffset) / 3;

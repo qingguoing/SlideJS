@@ -14,7 +14,7 @@ var Animation = (function() {
         this.controllerNext = this.config.setClass && this.config.setClass.controllerNext || '';
 
         this.miliTime = this.config.miliTime || 50;
-        this.aboutTime = this.config.aboutTime || 5000;
+        this.aboutTime = this.config.aboutTime || 3000;
         this.currentTimer = null;
         this.timer = null;
         this.speed = 0;
@@ -106,25 +106,22 @@ var Animation = (function() {
         },
         
         prev: function() {
-        	this.nextPic--;
-        	if (this.nextPic < 0) {
-        		this.nextPic = this.number - 1;
-        	}
-        	this.go(this.nextPic);
+        	this.go(--this.nextPic);
         },
         
         next: function() {
-        	this.nextPic++;
-        	if (this.nextPic >= this.number) {
-        		this.nextPic = 0;
-        	}
-        	this.go(this.nextPic);
+        	this.go(++this.nextPic);
         },
         
-        go: function(index) {
-        	var that = this,
-        		left = -index * this.width;
-        	
+        go: function(index) {               
+        	if (index < 0) index = this.number -1;
+            if (index >= this.number) index = 0;
+            
+            var that = this,
+                left = -index * this.width;
+            
+            this.nextPic = index;
+            
         	if (this.showMarker) {
         		for (var i = 0; i < this.number; i++) {
         			i === index ? this.oOli[i].className = this.active : this.oOli[i].className = this.unactive;

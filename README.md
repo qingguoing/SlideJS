@@ -17,7 +17,7 @@ To be placed into the initiation code, and then passed to the relevant configura
   - controllerPrev `{string}` class of left control
   - controllerNext `{string}` class of right control
 
-alse, if the website is based on the jquery library, and you can see the plugin of jquery [jquery-slide.js](https://github.com/qingguoing/jquery-slide)
+**what's more, if the website is based on the jquery library, and you can see the plugin of jquery [jquery-slide.js](https://github.com/qingguoing/jquery-slide)**
 
 Lisence
 ===
